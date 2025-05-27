@@ -3,14 +3,15 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.layers import Dropout as dropout
 from src.model import build_model
+from data.split_data import split_data
 
-train_path = "/content/drive/MyDrive/split_animals10/train"
-val_path = "/content/drive/MyDrive/split_animals10/val"
-test_path = "/content/drive/MyDrive/split_animals10/test"
+path=split_data()
+
+train_path = path+"/split_animals10/train"
+val_path = path+"/split_animals10/val"
 
 train_gen = ImageDataGenerator(rescale=1./255)
 val_gen = ImageDataGenerator(rescale=1./255)
-test_gen = ImageDataGenerator(rescale=1./255)
 
 train_data = train_gen.flow_from_directory(train_path, target_size=(150,150), batch_size=32, class_mode='categorical')
 val_data = val_gen.flow_from_directory(val_path, target_size=(150,150), batch_size=32, class_mode='categorical')
