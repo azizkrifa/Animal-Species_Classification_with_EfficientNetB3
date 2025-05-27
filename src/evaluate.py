@@ -11,7 +11,7 @@ def evaluate_model(model_path='outputs/model.h5', test_dir='data/split_animals10
     loss, accuracy = model.evaluate(test_gen)
     print(f"Test Accuracy: {accuracy:.4f}, Test Loss: {loss:.4f}")
 
-    class_labels = list(test_data.class_indices.keys())
+    class_labels = list(test_gen.class_indices.keys())
     
     italian_to_english = {
         'cane': 'dog',
@@ -28,7 +28,7 @@ def evaluate_model(model_path='outputs/model.h5', test_dir='data/split_animals10
     
     class_labels = [italian_to_english[label] for label in class_labels]
     
-    images, true_labels = next(test_data)
+    images, true_labels = next(test_gen)
     pred_probs = model.predict(images)
     pred_classes = np.argmax(pred_probs, axis=1)
     true_classes = np.argmax(true_labels, axis=1)
