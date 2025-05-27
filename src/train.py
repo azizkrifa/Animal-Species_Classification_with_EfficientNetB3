@@ -14,7 +14,6 @@ test_gen = ImageDataGenerator(rescale=1./255)
 
 train_data = train_gen.flow_from_directory(train_path, target_size=(150,150), batch_size=32, class_mode='categorical')
 val_data = val_gen.flow_from_directory(val_path, target_size=(150,150), batch_size=32, class_mode='categorical')
-test_data = test_gen.flow_from_directory(test_path, target_size=(150,150), batch_size=32, class_mode='categorical')
 
 model = build_model()
 
@@ -32,3 +31,18 @@ history = model.fit(
     epochs=50,
     callbacks=[early_stop]
 )
+
+plt.figure(figsize=(12, 4))
+    plt.subplot(1,2,1)
+    plt.plot(history.history['accuracy'], label='Train Acc')
+    plt.plot(history.history['val_accuracy'], label='Val Acc')
+    plt.legend()
+    plt.title('Accuracy')
+
+    plt.subplot(1,2,2)
+    plt.plot(history.history['loss'], label='Train Loss')
+    plt.plot(history.history['val_loss'], label='Val Loss')
+    plt.legend()
+    plt.title('Loss')
+
+    plt.savefig('/output/history.png'))
