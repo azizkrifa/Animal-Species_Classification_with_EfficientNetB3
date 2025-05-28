@@ -1,24 +1,15 @@
 import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.layers import Dropout as dropout
 from src.model import build_model
-from data.split_data import split_data
+from data import generate_data
+from src import visualize , evaluate_model
 
-path=split_data()
 
-train_path = path+"/split_animals10/train"
-val_path = path+"/split_animals10/val"
+train_data, val_data = generate_data()  # split the dataset into train and validation sets
 
-train_gen = ImageDataGenerator(rescale=1./255)
-val_gen = ImageDataGenerator(rescale=1./255)
+model = build_model()    # build the model with architecture defined in src/model.py
 
-train_data = train_gen.flow_from_directory(train_path, target_size=(150,150), batch_size=32, class_mode='categorical')
-val_data = val_gen.flow_from_directory(val_path, target_size=(150,150), batch_size=32, class_mode='categorical')
-
-model = build_model()
-
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']) # compile the model with optimizer, loss function and metrics
 
 early_stop = EarlyStopping(
     monitor='val_loss',
@@ -33,7 +24,11 @@ history = model.fit(
     callbacks=[early_stop]
 )
 
-visualize(history)
+model.save('/output/model.h5')  # save the model to the output directory
 
-model.save('/output/model.h5')
+model_path = ""
+data_path  = ""
 
+evaluate_model(model_path, data_path)    #evaluate the model with the test data
+
+visualize(history)    # visualize the training history(accuracy and loss)
