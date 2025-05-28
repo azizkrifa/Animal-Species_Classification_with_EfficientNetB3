@@ -1,4 +1,3 @@
-!pip install split-folders
 import splitfolders
 
 def split_data():
