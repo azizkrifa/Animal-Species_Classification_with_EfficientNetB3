@@ -13,4 +13,5 @@ def visualize(history):
   plt.plot(history.history['val_loss'], label='Val Loss')
   plt.legend()
   plt.title('Loss')
+  plt.savefig('/output/history.png'))
   plt.show()
