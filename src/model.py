@@ -10,7 +10,7 @@ def build_model(input_shape=(150, 150, 3), num_classes=10):
         Conv2D(128, (3,3), activation='relu'),
         MaxPooling2D(2,2),
         Flatten(),
-        Dropout(0.5),
+        Dropout(0.6),
         Dense(128, activation='relu'),
         Dense(num_classes, activation='softmax')
 ])
