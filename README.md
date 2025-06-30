@@ -1,4 +1,5 @@
-# animals10-classifier
+# animals10-classifier_using_EfficientNetB3
+
 A CNN-based image classifier trained on the Animals10 dataset.
 
  🚀 How to Run
