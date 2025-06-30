@@ -43,7 +43,7 @@ This project implements a deep learning pipeline for classifying 10 animal speci
 
 ## 📁 Dataset ##
 
-- Original dataset ( **26k images** ) downloaded from Kaggle via **kagglehub**: [alessiocorrado99/animals10](https://www.kaggle.com/datasets/alessiocorrado99/animals10)
+- Original dataset ( **26k images** ) downloaded from Kaggle via **kagglehub**: [alessiocorrado99/animals10](https://www.kaggle.com/datasets/alessiocorrado99/animals10).
 
 - 10 different animals : `Butterfly`   `Cat`   `Chicken`   `Cow`   `Dog`   `Elephant`   `Horse`   `Sheep`   `Spider`   `Squirrel`.
 
@@ -55,34 +55,34 @@ This project implements a deep learning pipeline for classifying 10 animal speci
 
 ## ⚙️ Model Setup
 
-- **Base model**: EfficientNetB3 (pretrained on ImageNet, `include_top=False`)
+- **Base model**: EfficientNetB3 (pretrained on ImageNet, `include_top=False`).
   
-- **Input size**: 224×224×3 (**RGB**)
+- **Input size**: 224×224×3 (**RGB**).
   
 - **Architecture**:
   
   - GlobalAveragePooling2D
-  - **Dense**(512, **ReLU**) + **BatchNormalization**
-  - **Dense**(256, **ReLU**) + **BatchNormalization**
-  - **Dense**(10, **Softmax**)
+  - **Dense**(512, **ReLU**) + **BatchNormalization**.
+  - **Dense**(256, **ReLU**) + **BatchNormalization**.
+  - **Dense**(10, **Softmax**).
     
-- **Optimizer**: Adam (learning rate = 1e-5)
+- **Optimizer**: Adam (learning rate = 1e-5).
   
-- **Loss function**: Categorical Crossentropy
+- **Loss function**: Categorical Crossentropy.
   
-- **Metrics**: Accuracy
+- **Metrics**: Accuracy.
 
 ---
 
 ## 🏋️‍♂️ Training Details
 
-- **Epochs**: 50 (11 effected)
+- **Epochs**: 50 (11 effected).
   
-- **Batch size**: 32
+- **Batch size**: 32.
   
-- **Training data**: Augmented and balanced images
+- **Training data**: Augmented and balanced images.
   
-- **Validation data**: Clean validation set
+- **Validation data**: Clean validation set.
   
 - **Callbacks**:
   
