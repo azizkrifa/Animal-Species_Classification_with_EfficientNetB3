@@ -20,13 +20,30 @@ This project implements a deep learning pipeline for classifying 10 animal speci
 
 - Evaluated the model on a test set with `accuracy`, `classification report` ,  and `confusion matrix`.
 
-- Visualized random `test predictions` showing **`correct** vs **incorrect** classification.
+- Visualized random `test predictions` showing **correct** vs **incorrect** classification.
+
+---
+
+## 🚀 How to Run
+
+#### 📥 1. Clone the Repository
+
+``` bash
+    git clone https://github.com/azizkrifa/Animal-Species_Classification_with_EfficientNetB3.git
+    cd  Animal-Species_Classification_with_EfficientNetB3
+```
+
+#### 📦 2. Install Dependencies
+
+``` bash 
+   pip install -r requirements.txt
+``` 
 
 ---
 
 ## 📁 Dataset ##
 
-- Original dataset( **26k images** ) downloaded from Kaggle via **kagglehub**: [alessiocorrado99/animals10](https://www.kaggle.com/datasets/alessiocorrado99/animals10)
+- Original dataset ( **26k images** ) downloaded from Kaggle via **kagglehub**: [alessiocorrado99/animals10](https://www.kaggle.com/datasets/alessiocorrado99/animals10)
 
 - 10 different animals : `Butterfly`   `Cat`   `Chicken`   `Cow`   `Dog`   `Elephant`   `Horse`   `Sheep`   `Spider`   `Squirrel`.
 
@@ -86,7 +103,7 @@ Plots of training and validation `accuracy / loss` across **11** epochs :
 ## 📊 Evaluation Results
 
 - **Test accuracy** printed after model evaluation.
-- **Classification report** with precision, recall, and F1-score per class (High performance across all classes, with a **test accuracy of 97%** ).
+- **Classification report** with `precision`, `recall`, and `F1-score` per class (High performance across all classes, with a **test accuracy of 97%** ).
 - **Confusion matrix** heatmap to visualize class-wise performance.
 
 ➡️  All evaluation outputs and the final model are stored in the `Outputs/` folder.
