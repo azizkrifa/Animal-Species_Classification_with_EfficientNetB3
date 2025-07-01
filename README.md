@@ -4,7 +4,7 @@ This project implements a deep learning pipeline for classifying 10 animal speci
 
 ---
 
-## 🧠 Overview ##
+## 🧠 Overview 
 
 - Downloaded the `Animals10` dataset from `Kaggle`.
 
@@ -41,7 +41,7 @@ This project implements a deep learning pipeline for classifying 10 animal speci
 
 ---
 
-## 📁 Dataset ##
+## 📁 Dataset 
 
 - Original dataset ( **26k images** ) downloaded from Kaggle via **kagglehub**: [alessiocorrado99/animals10](https://www.kaggle.com/datasets/alessiocorrado99/animals10).
 
@@ -50,6 +50,15 @@ This project implements a deep learning pipeline for classifying 10 animal speci
 - Data split into `train(70%)`, `val(20%)`, and `test(10%)` folders using **split-folders** library.
 
 - Balanced the training set using **augmentation** to equalize image **counts per class**.
+
+### 📊 Class Distribution : 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0a16700f-4d41-4e6a-a767-e60464ada1ed" width="46%" height="300px" />
+  <img src="https://github.com/user-attachments/assets/2a8135a5-cd20-4fab-b44f-4f30f0602608" width="46%" height="300px" />
+</p>
+
+
+
 
 ---
 
